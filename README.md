@@ -1,8 +1,6 @@
 # README
 
 ## Userテーブル
-
-
 | Column        | Type       | Options     |
 | ------------- | ---------- | ----------- |
 | name          | string     | null: false |
@@ -10,8 +8,7 @@
 | password      | string     | null: false |
 | country_id    | integer    | null: false |
 | profile       | text       |             |
-
-
+| birthday      | date       | null: false |
 
 ### Associate
 - has_many :messages
@@ -24,12 +21,9 @@
 
 
 ## Postテーブル
-
-
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | text          | text       | null: false                    |
-| learn_id      | integer    | null:false                     |
 | place         | string     |                                |
 | user_id       | references | null: false, foreign_key: true |
 
@@ -42,9 +36,9 @@
 - has_many :post_tag_relations
 - has_many :tags, through: :post_tag_relations
 
+
+
 ## Likes
-
-
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 | user_id | references | null: false, foreign_key: true |
@@ -55,9 +49,8 @@
 - belongs_to :post
 
 
+
 ## Roomテーブル
-
-
 | Column        | Type       | Options     |
 | ------------- | ---------- | ----------- |
 | name          | string     |             |
@@ -70,8 +63,8 @@
 - has_many :posts, through: :post_rooms
 
 
-## User_roomsテーブル
 
+## User_roomsテーブル
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 | user_id | references | null: false, foreign_key: true |
@@ -80,6 +73,7 @@
 ### Associate
 - belongs_to :user
 - belongs_to :room
+
 
 
 ## Post_roomsテーブル
@@ -91,6 +85,7 @@
 ### Associate
 - belongs_to :room
 - belongs_to :post
+
 
 
 ## Messagesテーブル
@@ -105,6 +100,7 @@
 - belongs_to :room
 
 
+
 ## Tagsテーブル
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
@@ -113,6 +109,8 @@
 ### Associate
 - has_many :post_tag_relations
 - has_many :post, through: :post_tag_relations
+
+
 
 ## Post_tag_relationsテーブル
 | Column  | Type       | Options                        |
