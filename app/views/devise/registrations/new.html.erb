@@ -1,0 +1,90 @@
+<%= render "shared/second-header"%>
+
+<div classs="user-form">
+
+
+    <div class="up-form">
+    
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="error-messages">
+    <%= render "devise/shared/error_messages", resource: resource %>
+    </div>
+  <div class="title-form">
+    <%= image_tag("account.png", class:"account-icon") %>
+      <h2 class="user-top-title">Sign up</h2>
+  </div>
+
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <%= f.label "名前", class:"form-text"%><br />
+    </div>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"input-default", id:"user-name" %>
+  </div>
+
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <%= f.label "メールアドレス", class:"form-text"%><br />
+  </div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-default", id:"user-email" %>
+  </div>
+
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <%= f.label "パスワード", class:"form-text" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    </div>
+    <%= f.password_field :password, autocomplete: "new-password",class:"input-default", id:"password" %>
+  </div>
+
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <%= f.label "パスワード確認", class:"form-text" %><br />
+  </div>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"input-default", id:"password-comfirmation" %>
+  </div>
+
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <%= f.label "出身国", class:"form-text" %><br />
+  </div>
+    <%= f.collection_select(:country_id, Country.all, :id, :name, {}, {class:"input-default", id:"country"}) %>
+</div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">生年月日</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-birth-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :birthday,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 1930,
+                    end_year: (Time.now.year - 5),
+                    date_separator: '%s'),
+                  " 年 ", " 月 ") + " 日 " %>
+    </div>
+  </div>
+
+
+<div class="form-group">
+ <div class='form-text-wrap'>
+    <%= f.label "自己紹介", class:"form-text" %><br />
+  </div>
+    <%= f.text_area :profile, autofocus: true, class:"input-text", id:"profile" %>
+</div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class:"submit-btn" %>
+  </div>
+<% end %>
+
+  </div>
+</div>
+<%= render "devise/shared/links" %>
