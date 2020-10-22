@@ -32,7 +32,7 @@
   <div class='form-text-wrap'>
     <%= f.label "パスワード", class:"form-text" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> 文字以上の英数字)</em>
     <% end %><br />
     </div>
     <%= f.password_field :password, autocomplete: "new-password",class:"input-default", id:"password" %>
@@ -44,6 +44,11 @@
   </div>
     <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"input-default", id:"password-comfirmation" %>
   </div>
+
+<div class="form-group">
+<%= f.label "プロフィール画像", class:"avatar-form" %><br />
+<%= f.file_field :avatar %>
+</div>
 
 <div class="form-group">
   <div class='form-text-wrap'>
