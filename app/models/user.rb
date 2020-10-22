@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :country
+  has_one_attached :avatar
+
 
   with_options presence: true do
     validates :name
@@ -13,5 +15,6 @@ class User < ApplicationRecord
     validates :password_confirmation, presence: true
     validates :country_id, numericality: { other_than: 1 }
     validates :birthday
+    validates :avatar
   end
 end
