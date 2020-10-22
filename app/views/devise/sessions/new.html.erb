@@ -14,14 +14,14 @@
   <div class="field">
   <div class="form-group">
     <%= f.label "メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:" example@example.com" %>
   </div>
   </div>
 
   <div class="field">
   <div class="form-group">
     <%= f.label "パスワード " %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder:" 英数字６文字以上" %>
   </div>
   </div>
 
