@@ -10,11 +10,10 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    validates :email, uniqueness: true
-    validates :password, format: { with: /\A[a-zA-Z0-9]+\z/, message: 'Password Include both letters and numbers' }
     validates :password_confirmation, presence: true
     validates :country_id, numericality: { other_than: 1 }
     validates :birthday
     validates :avatar
   end
+  validates :password, format: { with: /\A[a-zA-Z0-9]+\z/, message: 'Password Include both letters and numbers' }
 end
