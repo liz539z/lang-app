@@ -1,0 +1,14 @@
+.second-header {
+  position:fixed;
+  width: 100%;
+  min-width: 800px;
+  height: 90px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lang-logo {
+  width: 300px;
+  height: 90px;
+}

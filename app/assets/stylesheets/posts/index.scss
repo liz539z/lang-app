@@ -1,0 +1,20 @@
+
+.title-contents {
+  width: 100vw;
+
+  background-image: image-url('header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 3vh 40vw;
+  margin-left: 40vh;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.service-title {
+  font-size: 8vh;
+}

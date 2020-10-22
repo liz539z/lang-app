@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+ 
+  position: relative;
+  width: 100vw;
+  height: 100px;
+
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.main-bar-contents{
+  position: fixed;
+  width: 100vw;
+  height: 100px;
+
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.site-icon {
+  position: absolute;
+  width: 200px;
+  /* margin-right: 5vw; */
+} 
