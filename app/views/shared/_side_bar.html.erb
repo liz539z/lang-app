@@ -1,0 +1,24 @@
+<div class="side-bar">
+  <div class="side">
+
+  <ul class='lists-left'>
+    <div class="user-info">
+      <% if user_signed_in? %>
+      <li><%= link_to current_user.name, '#', class: "user-name"%>
+      <%# <% if current_user.avatar.attached? %>
+      <%#= link_to current_user.avatar, "#", class: "user-name" %> <%# end %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </div>
+
+
+    <form class="search-form" action="#">
+      <input class='input-box' placeholder='キーワードから探す'>
+      <button class="search-button">
+        <%= image_tag "search.png", class:"search-icon" %>
+       </button> 
+    </form> 
+  </ul>
