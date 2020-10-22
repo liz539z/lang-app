@@ -1,12 +1,3 @@
-a {
-  text-decoration: none;
-}
-
-.main {
-  background:#333333;
-}
-
-/* 画面上部の帯部分 */
 
 .title-contents {
   width: 100vw;
@@ -18,8 +9,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
   padding: 3vh 40vw;
+  margin-left: 40vh;
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
@@ -27,6 +18,3 @@ a {
 .service-title {
   font-size: 8vh;
 }
-
-/* 画面上部の帯部分 */
-
